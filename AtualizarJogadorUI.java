@@ -1,4 +1,3 @@
-// AtualizarJogadorUI.java
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +17,13 @@ public class AtualizarJogadorUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Campo para o nome antigo
         JLabel nomeAntigoLabel = new JLabel("Nome Atual:");
         nomeAntigoLabel.setBounds(50, 30, 100, 25);
+        nomeAntigoLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeAntigoLabel);
 
         nomeAntigoField = new JTextField();
@@ -30,6 +33,7 @@ public class AtualizarJogadorUI {
         // Campo para o novo nome
         JLabel nomeNovoLabel = new JLabel("Novo Nome:");
         nomeNovoLabel.setBounds(50, 70, 100, 25);
+        nomeNovoLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeNovoLabel);
 
         nomeNovoField = new JTextField();
@@ -39,6 +43,7 @@ public class AtualizarJogadorUI {
         // Campo para o novo gênero
         JLabel generoLabel = new JLabel("Novo Género:");
         generoLabel.setBounds(50, 110, 100, 25);
+        generoLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(generoLabel);
 
         generoBox = new JComboBox<>(new String[]{"Masculino", "Feminino"});
@@ -46,7 +51,7 @@ public class AtualizarJogadorUI {
         frame.add(generoBox);
 
         // Botão para atualizar
-        JButton btnAtualizar = new JButton("Atualizar");
+        JButton btnAtualizar = DarkThemeUI.createDarkButton("Atualizar");
         btnAtualizar.setBounds(50, 160, 140, 30);
         frame.add(btnAtualizar);
 
@@ -58,7 +63,7 @@ public class AtualizarJogadorUI {
         });
 
         // Botão para voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(200, 160, 140, 30);
         frame.add(btnVoltar);
 

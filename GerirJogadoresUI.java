@@ -11,8 +11,11 @@ public class GerirJogadoresUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Botão para Registrar Jogador
-        JButton btnRegistrar = new JButton("Registrar Jogador");
+        JButton btnRegistrar = DarkThemeUI.createDarkButton("Registrar Jogador");
         btnRegistrar.setBounds(100, 30, 200, 30);
         frame.add(btnRegistrar);
 
@@ -20,12 +23,12 @@ public class GerirJogadoresUI {
         btnRegistrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new RegistrarJogadorUI();
+                new RegistarJogadorUI();
             }
         });
 
         // Botão para Consultar Jogador
-        JButton btnConsultar = new JButton("Consultar Jogador");
+        JButton btnConsultar = DarkThemeUI.createDarkButton("Consultar Jogador");
         btnConsultar.setBounds(100, 70, 200, 30);
         frame.add(btnConsultar);
 
@@ -38,7 +41,7 @@ public class GerirJogadoresUI {
         });
 
         // Botão para Atualizar Jogador
-        JButton btnAtualizar = new JButton("Atualizar Jogador");
+        JButton btnAtualizar = DarkThemeUI.createDarkButton("Atualizar Jogador");
         btnAtualizar.setBounds(100, 110, 200, 30);
         frame.add(btnAtualizar);
 
@@ -51,7 +54,7 @@ public class GerirJogadoresUI {
         });
 
         // Botão para Excluir Jogador
-        JButton btnExcluir = new JButton("Excluir Jogador");
+        JButton btnExcluir = DarkThemeUI.createDarkButton("Excluir Jogador");
         btnExcluir.setBounds(100, 150, 200, 30);
         frame.add(btnExcluir);
 
@@ -64,7 +67,7 @@ public class GerirJogadoresUI {
         });
 
         // Botão para Voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(100, 190, 200, 30);
         frame.add(btnVoltar);
 

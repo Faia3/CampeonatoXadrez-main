@@ -1,4 +1,3 @@
-// ExcluirArbitroUI.java
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,17 +15,23 @@ public class ExcluirArbitroUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Campo para o nome do árbitro
         JLabel nomeLabel = new JLabel("Nome:");
         nomeLabel.setBounds(50, 30, 100, 25);
+        nomeLabel.setForeground(DarkThemeUI.TEXT_COLOR);  // Texto em cor clara
         frame.add(nomeLabel);
 
         nomeField = new JTextField();
         nomeField.setBounds(150, 30, 200, 25);
+        nomeField.setBackground(DarkThemeUI.BACKGROUND_COLOR);
+        nomeField.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeField);
 
         // Botão para excluir
-        JButton btnExcluir = new JButton("Excluir");
+        JButton btnExcluir = DarkThemeUI.createDarkButton("Excluir");
         btnExcluir.setBounds(50, 80, 140, 30);
         frame.add(btnExcluir);
 
@@ -38,7 +43,7 @@ public class ExcluirArbitroUI {
         });
 
         // Botão para voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(200, 80, 140, 30);
         frame.add(btnVoltar);
 

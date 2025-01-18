@@ -1,18 +1,17 @@
-// CampeonatoSingleton.java
 import java.util.ArrayList;
 import java.util.List;
 
-public class CampeonatoSingleton {
-    private static CampeonatoSingleton instance;
+public class CampeonatoSolo {
+    private static CampeonatoSolo instance;
     private List<Torneio> torneios;
 
-    private CampeonatoSingleton() {
+    private CampeonatoSolo() {
         this.torneios = new ArrayList<>();
     }
 
-    public static CampeonatoSingleton getCampeonato() {
+    public static CampeonatoSolo getCampeonato() {
         if (instance == null) {
-            instance = new CampeonatoSingleton();
+            instance = new CampeonatoSolo();
         }
         return instance;
     }

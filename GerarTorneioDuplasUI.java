@@ -10,8 +10,8 @@ public class GerarTorneioDuplasUI {
     private JTextField nomeTorneioField;
     private JList<String> jogadoresList;
     private DefaultListModel<String> jogadoresModel;
-    private JList<String> equipesList;
-    private DefaultListModel<String> equipesModel;
+    private JList<String> equipasList;
+    private DefaultListModel<String> equipasModel;
     private List<Jogador> jogadoresDisponiveis;
 
     public GerarTorneioDuplasUI() {
@@ -20,16 +20,23 @@ public class GerarTorneioDuplasUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         JLabel nomeLabel = new JLabel("Nome do Torneio:");
         nomeLabel.setBounds(50, 30, 150, 25);
+        nomeLabel.setForeground(DarkThemeUI.TEXT_COLOR);  // Texto em cor clara
         frame.add(nomeLabel);
 
         nomeTorneioField = new JTextField();
         nomeTorneioField.setBounds(200, 30, 300, 25);
+        nomeTorneioField.setBackground(DarkThemeUI.BACKGROUND_COLOR);
+        nomeTorneioField.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeTorneioField);
 
         JLabel jogadoresLabel = new JLabel("Jogadores Disponíveis:");
         jogadoresLabel.setBounds(50, 70, 200, 25);
+        jogadoresLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(jogadoresLabel);
 
         jogadoresModel = new DefaultListModel<>();
@@ -38,39 +45,40 @@ public class GerarTorneioDuplasUI {
         jogadoresScrollPane.setBounds(50, 100, 200, 300);
         frame.add(jogadoresScrollPane);
 
-        JLabel equipesLabel = new JLabel("Equipes Criadas:");
-        equipesLabel.setBounds(300, 70, 200, 25);
-        frame.add(equipesLabel);
+        JLabel equipasLabel = new JLabel("Equipas Criadas:");
+        equipasLabel.setBounds(300, 70, 200, 25);
+        equipasLabel.setForeground(DarkThemeUI.TEXT_COLOR);
+        frame.add(equipasLabel);
 
-        equipesModel = new DefaultListModel<>();
-        equipesList = new JList<>(equipesModel);
-        JScrollPane equipesScrollPane = new JScrollPane(equipesList);
-        equipesScrollPane.setBounds(300, 100, 200, 300);
-        frame.add(equipesScrollPane);
+        equipasModel = new DefaultListModel<>();
+        equipasList = new JList<>(equipasModel);
+        JScrollPane equipasScrollPane = new JScrollPane(equipasList);
+        equipasScrollPane.setBounds(300, 100, 200, 300);
+        frame.add(equipasScrollPane);
 
-        JButton btnAdicionarEquipe = new JButton("Adicionar Equipe");
-        btnAdicionarEquipe.setBounds(50, 420, 200, 30);
-        frame.add(btnAdicionarEquipe);
+        JButton btnAdicionarEquipa = DarkThemeUI.createDarkButton("Adicionar Equipa");
+        btnAdicionarEquipa.setBounds(50, 420, 200, 30);
+        frame.add(btnAdicionarEquipa);
 
-        btnAdicionarEquipe.addActionListener(new ActionListener() {
+        btnAdicionarEquipa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarEquipe();
+                adicionarEquipa();
             }
         });
 
-        JButton btnRemoverEquipe = new JButton("Remover Equipe");
-        btnRemoverEquipe.setBounds(300, 420, 200, 30);
-        frame.add(btnRemoverEquipe);
+        JButton btnRemoverEquipa = DarkThemeUI.createDarkButton("Remover Equipa");
+        btnRemoverEquipa.setBounds(300, 420, 200, 30);
+        frame.add(btnRemoverEquipa);
 
-        btnRemoverEquipe.addActionListener(new ActionListener() {
+        btnRemoverEquipa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                removerEquipe();
+                removerEquipa();
             }
         });
 
-        JButton btnGerar = new JButton("Gerar Torneio");
+        JButton btnGerar = DarkThemeUI.createDarkButton("Gerar Torneio");
         btnGerar.setBounds(50, 470, 200, 30);
         frame.add(btnGerar);
 
@@ -81,7 +89,7 @@ public class GerarTorneioDuplasUI {
             }
         });
 
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(300, 470, 200, 30);
         frame.add(btnVoltar);
 
@@ -114,35 +122,35 @@ public class GerarTorneioDuplasUI {
         }
     }
 
-    private void adicionarEquipe() {
+    private void adicionarEquipa() {
         List<String> jogadoresSelecionados = jogadoresList.getSelectedValuesList();
 
         if (jogadoresSelecionados.size() != 2) {
-            JOptionPane.showMessageDialog(frame, "Selecione exatamente 2 jogadores para criar uma equipe!", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Selecione exatamente 2 jogadores para criar uma equipa!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String equipe = jogadoresSelecionados.get(0) + " e " + jogadoresSelecionados.get(1);
-        equipesModel.addElement(equipe);
+        String equipa = jogadoresSelecionados.get(0) + " e " + jogadoresSelecionados.get(1);
+        equipasModel.addElement(equipa);
 
         jogadoresModel.removeElement(jogadoresSelecionados.get(0));
         jogadoresModel.removeElement(jogadoresSelecionados.get(1));
     }
 
-    private void removerEquipe() {
-        String equipeSelecionada = equipesList.getSelectedValue();
+    private void removerEquipa() {
+        String equipaSelecionada = equipasList.getSelectedValue();
 
-        if (equipeSelecionada == null) {
-            JOptionPane.showMessageDialog(frame, "Selecione uma equipe para remover!", "Erro", JOptionPane.ERROR_MESSAGE);
+        if (equipaSelecionada == null) {
+            JOptionPane.showMessageDialog(frame, "Selecione uma equipa para remover!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String[] jogadoresEquipe = equipeSelecionada.split(" e ");
-        for (String jogador : jogadoresEquipe) {
+        String[] jogadoresEquipa = equipaSelecionada.split(" e ");
+        for (String jogador : jogadoresEquipa) {
             jogadoresModel.addElement(jogador.trim());
         }
 
-        equipesModel.removeElement(equipeSelecionada);
+        equipasModel.removeElement(equipaSelecionada);
     }
 
     private void gerarTorneio() {
@@ -153,8 +161,8 @@ public class GerarTorneioDuplasUI {
             return;
         }
 
-        if (equipesModel.isEmpty()) {
-            JOptionPane.showMessageDialog(frame, "Adicione pelo menos uma equipe para criar o torneio!", "Erro", JOptionPane.ERROR_MESSAGE);
+        if (equipasModel.isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "Adicione pelo menos uma equipa para criar o torneio!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -166,9 +174,9 @@ public class GerarTorneioDuplasUI {
         String arquivoTorneio = "Torneios/" + nomeTorneio + ".txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoTorneio))) {
             writer.write("Estado: a decorrer\n");
-            writer.write("Equipes:\n");
-            for (int i = 0; i < equipesModel.size(); i++) {
-                writer.write("- " + equipesModel.getElementAt(i) + "\n");
+            writer.write("Equipas:\n");
+            for (int i = 0; i < equipasModel.size(); i++) {
+                writer.write("- " + equipasModel.getElementAt(i) + "\n");
             }
             JOptionPane.showMessageDialog(frame, "Torneio de Duplas criado com sucesso e salvo em " + arquivoTorneio);
         } catch (IOException ex) {

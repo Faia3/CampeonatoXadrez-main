@@ -20,16 +20,23 @@ public class GerarTorneioSingularesUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         JLabel nomeLabel = new JLabel("Nome do Torneio:");
         nomeLabel.setBounds(50, 30, 150, 25);
+        nomeLabel.setForeground(DarkThemeUI.TEXT_COLOR);  // Texto em cor clara
         frame.add(nomeLabel);
 
         nomeTorneioField = new JTextField();
         nomeTorneioField.setBounds(200, 30, 300, 25);
+        nomeTorneioField.setBackground(DarkThemeUI.BACKGROUND_COLOR);
+        nomeTorneioField.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeTorneioField);
 
         JLabel jogadoresLabel = new JLabel("Jogadores Disponíveis:");
         jogadoresLabel.setBounds(50, 70, 200, 25);
+        jogadoresLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(jogadoresLabel);
 
         jogadoresModel = new DefaultListModel<>();
@@ -40,6 +47,7 @@ public class GerarTorneioSingularesUI {
 
         JLabel participantesLabel = new JLabel("Participantes Adicionados:");
         participantesLabel.setBounds(300, 70, 200, 25);
+        participantesLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(participantesLabel);
 
         participantesModel = new DefaultListModel<>();
@@ -48,7 +56,7 @@ public class GerarTorneioSingularesUI {
         participantesScrollPane.setBounds(300, 100, 200, 300);
         frame.add(participantesScrollPane);
 
-        JButton btnAdicionarParticipante = new JButton("Adicionar Participante");
+        JButton btnAdicionarParticipante = DarkThemeUI.createDarkButton("Adicionar Participante");
         btnAdicionarParticipante.setBounds(50, 420, 200, 30);
         frame.add(btnAdicionarParticipante);
 
@@ -59,7 +67,7 @@ public class GerarTorneioSingularesUI {
             }
         });
 
-        JButton btnRemoverParticipante = new JButton("Remover Participante");
+        JButton btnRemoverParticipante = DarkThemeUI.createDarkButton("Remover Participante");
         btnRemoverParticipante.setBounds(300, 420, 200, 30);
         frame.add(btnRemoverParticipante);
 
@@ -70,7 +78,7 @@ public class GerarTorneioSingularesUI {
             }
         });
 
-        JButton btnGerar = new JButton("Gerar Torneio");
+        JButton btnGerar = DarkThemeUI.createDarkButton("Gerar Torneio");
         btnGerar.setBounds(50, 470, 200, 30);
         frame.add(btnGerar);
 
@@ -81,7 +89,7 @@ public class GerarTorneioSingularesUI {
             }
         });
 
-        JButton        btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(300, 470, 200, 30);
         frame.add(btnVoltar);
 
@@ -162,4 +170,3 @@ public class GerarTorneioSingularesUI {
         frame.dispose();
     }
 }
-

@@ -1,5 +1,3 @@
-
-// GerirArbitrosUI.java
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,8 +11,11 @@ public class GerirArbitrosUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Botão para Registrar Árbitro
-        JButton btnRegistrar = new JButton("Registrar Árbitro");
+        JButton btnRegistrar = DarkThemeUI.createDarkButton("Registrar Árbitro");
         btnRegistrar.setBounds(100, 30, 200, 30);
         frame.add(btnRegistrar);
 
@@ -22,16 +23,16 @@ public class GerirArbitrosUI {
         btnRegistrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new RegistrarArbitroUI();
+                new RegistarArbitroUI();
             }
         });
 
         // Botão para Consultar Árbitro
-        JButton btnConsultar = new JButton("Consultar Árbitro");
+        JButton btnConsultar = DarkThemeUI.createDarkButton("Consultar Árbitro");
         btnConsultar.setBounds(100, 70, 200, 30);
         frame.add(btnConsultar);
 
-        // Botão para Consultar Árbitros
+        // Ação para Consultar Árbitros
         btnConsultar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,7 +41,7 @@ public class GerirArbitrosUI {
         });
 
         // Botão para Atualizar Árbitro
-        JButton btnAtualizar = new JButton("Atualizar Árbitro");
+        JButton btnAtualizar = DarkThemeUI.createDarkButton("Atualizar Árbitro");
         btnAtualizar.setBounds(100, 110, 200, 30);
         frame.add(btnAtualizar);
 
@@ -53,7 +54,7 @@ public class GerirArbitrosUI {
         });
 
         // Botão para Excluir Árbitro
-        JButton btnExcluir = new JButton("Excluir Árbitro");
+        JButton btnExcluir = DarkThemeUI.createDarkButton("Excluir Árbitro");
         btnExcluir.setBounds(100, 150, 200, 30);
         frame.add(btnExcluir);
 
@@ -66,7 +67,7 @@ public class GerirArbitrosUI {
         });
 
         // Botão para Voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(100, 190, 200, 30);
         frame.add(btnVoltar);
 

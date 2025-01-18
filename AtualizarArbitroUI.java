@@ -1,4 +1,3 @@
-// AtualizarArbitroUI.java
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,9 +18,13 @@ public class AtualizarArbitroUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Campo para o nome antigo
         JLabel nomeAntigoLabel = new JLabel("Nome Atual:");
         nomeAntigoLabel.setBounds(50, 30, 100, 25);
+        nomeAntigoLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeAntigoLabel);
 
         nomeAntigoField = new JTextField();
@@ -31,6 +34,7 @@ public class AtualizarArbitroUI {
         // Campo para o novo nome
         JLabel nomeNovoLabel = new JLabel("Novo Nome:");
         nomeNovoLabel.setBounds(50, 70, 100, 25);
+        nomeNovoLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(nomeNovoLabel);
 
         nomeNovoField = new JTextField();
@@ -40,6 +44,7 @@ public class AtualizarArbitroUI {
         // Campo para nova experiência
         JLabel experienciaLabel = new JLabel("Nova Experiência:");
         experienciaLabel.setBounds(50, 110, 120, 25);
+        experienciaLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(experienciaLabel);
 
         experienciaField = new JTextField();
@@ -49,6 +54,7 @@ public class AtualizarArbitroUI {
         // Campo para nova licença
         JLabel licencaLabel = new JLabel("Nova Licença:");
         licencaLabel.setBounds(50, 150, 100, 25);
+        licencaLabel.setForeground(DarkThemeUI.TEXT_COLOR);
         frame.add(licencaLabel);
 
         licencaField = new JTextField();
@@ -56,7 +62,7 @@ public class AtualizarArbitroUI {
         frame.add(licencaField);
 
         // Botão para atualizar
-        JButton btnAtualizar = new JButton("Atualizar");
+        JButton btnAtualizar = DarkThemeUI.createDarkButton("Atualizar");
         btnAtualizar.setBounds(50, 200, 140, 30);
         frame.add(btnAtualizar);
 
@@ -68,7 +74,7 @@ public class AtualizarArbitroUI {
         });
 
         // Botão para voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(200, 200, 140, 30);
         frame.add(btnVoltar);
 

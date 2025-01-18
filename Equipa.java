@@ -1,9 +1,9 @@
-public class Equipe {
+public class Equipa {
     private Jogador jogador1;
     private Jogador jogador2;
 
     // Construtor
-    public Equipe(Jogador jogador1, Jogador jogador2) {
+    public Equipa(Jogador jogador1, Jogador jogador2) {
         this.jogador1 = jogador1;
         this.jogador2 = jogador2;
     }
@@ -17,13 +17,13 @@ public class Equipe {
         return jogador2;
     }
 
-    // Nome combinado da equipe
-    public String getNomeEquipe() {
+    // Nome combinado da equipa
+    public String getNomeEquipa() {
         return jogador1.getNome() + " e " + jogador2.getNome();
     }
 
     @Override
     public String toString() {
-        return "Equipe: " + getNomeEquipe();
+        return "Equipa: " + getNomeEquipa();
     }
 }

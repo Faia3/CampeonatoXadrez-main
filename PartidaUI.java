@@ -18,6 +18,9 @@ public class PartidaUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Timer
         timerLabel = new JLabel(formatTime(remainingTime), SwingConstants.CENTER);
         timerLabel.setFont(new Font("Arial", Font.BOLD, 24));
@@ -30,7 +33,7 @@ public class PartidaUI {
         participante1Label.setBounds(50, 100, 200, 30);
         frame.add(participante1Label);
 
-        JButton btnXequeMate1 = new JButton("Xeque Mate");
+        JButton btnXequeMate1 = DarkThemeUI.createDarkButton("Xeque Mate");
         btnXequeMate1.setBounds(50, 150, 200, 40);
         frame.add(btnXequeMate1);
 
@@ -47,7 +50,7 @@ public class PartidaUI {
         participante2Label.setBounds(350, 100, 200, 30);
         frame.add(participante2Label);
 
-        JButton btnXequeMate2 = new JButton("Xeque Mate");
+        JButton btnXequeMate2 = DarkThemeUI.createDarkButton("Xeque Mate");
         btnXequeMate2.setBounds(350, 150, 200, 40);
         frame.add(btnXequeMate2);
 

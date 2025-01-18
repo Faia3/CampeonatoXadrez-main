@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 
-class SimpleChessBoard extends JPanel {
+class Tabuleiro extends JPanel {
     private final int BOARD_SIZE = 8;
     private final int TILE_SIZE = 60;
     private Color[][] boardColors;
     
-    public SimpleChessBoard() {
+    public Tabuleiro() {
         setPreferredSize(new Dimension(BOARD_SIZE * TILE_SIZE, BOARD_SIZE * TILE_SIZE));
         boardColors = new Color[BOARD_SIZE][BOARD_SIZE];
         readBoardFromFile();

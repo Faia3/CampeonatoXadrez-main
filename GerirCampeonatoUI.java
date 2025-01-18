@@ -15,8 +15,11 @@ public class GerirCampeonatoUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Botão para Gerar/Controlar Torneios
-        JButton btnGerarTorneios = new JButton("Gerar/Controlar Torneios");
+        JButton btnGerarTorneios = DarkThemeUI.createDarkButton("Gerar/Controlar Torneios");
         btnGerarTorneios.setBounds(50, 30, 400, 30);
         frame.add(btnGerarTorneios);
 
@@ -28,7 +31,7 @@ public class GerirCampeonatoUI {
         });
 
         // Botão para Visualizar Estado dos Torneios
-        JButton btnVisualizarEstado = new JButton("Visualizar Estado dos Torneios");
+        JButton btnVisualizarEstado = DarkThemeUI.createDarkButton("Visualizar Estado dos Torneios");
         btnVisualizarEstado.setBounds(50, 80, 400, 30);
         frame.add(btnVisualizarEstado);
 
@@ -40,7 +43,7 @@ public class GerirCampeonatoUI {
         });
 
         // Botão para Começar Partida
-        JButton btnComecarPartida = new JButton("Começar Partida");
+        JButton btnComecarPartida = DarkThemeUI.createDarkButton("Começar Partida");
         btnComecarPartida.setBounds(50, 130, 400, 30);
         frame.add(btnComecarPartida);
 
@@ -52,7 +55,7 @@ public class GerirCampeonatoUI {
         });
 
         // Botão para Voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(50, 180, 400, 30);
         frame.add(btnVoltar);
 
@@ -76,11 +79,11 @@ public class GerirCampeonatoUI {
         label.setBounds(50, 30, 300, 25);
         frame.add(label);
 
-        JButton btnSingulares = new JButton("Torneio Singulares");
+        JButton btnSingulares = DarkThemeUI.createDarkButton("Torneio Singulares");
         btnSingulares.setBounds(50, 70, 300, 30);
         frame.add(btnSingulares);
 
-        JButton btnDuplas = new JButton("Torneio Duplas");
+        JButton btnDuplas = DarkThemeUI.createDarkButton("Torneio Duplas");
         btnDuplas.setBounds(50, 120, 300, 30);
         frame.add(btnDuplas);
 
@@ -141,7 +144,7 @@ public class GerirCampeonatoUI {
             }
         });
 
-        JButton btnComecarPartida = new JButton("Começar Partida");
+        JButton btnComecarPartida = DarkThemeUI.createDarkButton("Começar Partida");
         btnComecarPartida.setBounds(300, 270, 200, 30);
         frame.add(btnComecarPartida);
 

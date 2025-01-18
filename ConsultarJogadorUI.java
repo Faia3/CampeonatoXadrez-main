@@ -1,4 +1,3 @@
-// ConsultarJogadorUI.java
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,15 +14,20 @@ public class ConsultarJogadorUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
 
+        // Aplicar tema escuro
+        DarkThemeUI.applyDarkTheme(frame);
+
         // Text Area para exibir os jogadores
         JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
+        textArea.setBackground(DarkThemeUI.BACKGROUND_COLOR);
+        textArea.setForeground(DarkThemeUI.TEXT_COLOR);
         JScrollPane scrollPane = new JScrollPane(textArea);
         scrollPane.setBounds(20, 20, 350, 200);
         frame.add(scrollPane);
 
         // Botão para carregar jogadores
-        JButton btnCarregar = new JButton("Carregar Jogadores");
+        JButton btnCarregar = DarkThemeUI.createDarkButton("Carregar Jogadores");
         btnCarregar.setBounds(20, 230, 170, 30);
         frame.add(btnCarregar);
 
@@ -36,7 +40,7 @@ public class ConsultarJogadorUI {
         });
 
         // Botão para voltar
-        JButton btnVoltar = new JButton("Voltar");
+        JButton btnVoltar = DarkThemeUI.createDarkButton("Voltar");
         btnVoltar.setBounds(200, 230, 170, 30);
         frame.add(btnVoltar);
 
